@@ -92,7 +92,7 @@ export default function HeroSection() {
 
             {/* Supporting Copy */}
             <p className="text-brand-muted text-base sm:text-lg max-w-xl leading-relaxed pt-2">
-              Your trusted partner for quality egg supply — from individual neighborhood retailers to high-volume wholesale distribution networks across Hyderabad and Telangana.
+              Your trusted partner for quality egg supply — from individual neighborhood retailers to high-volume wholesale distribution networks based in Adilabad and serving across Telangana.
             </p>
 
             {/* CTAs */}

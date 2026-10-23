@@ -144,7 +144,7 @@ export async function POST(request) {
         whatsapp: whatsapp?.trim() || phone.trim(),
         email: email?.trim() || null,
         businessType: businessType || 'Other Commercial Buyer',
-        district: district || 'Hyderabad',
+        district: district || 'Adilabad',
         locality: locality?.trim() || null,
         productName: productName || 'Standard White Eggs (30-Egg Tray)',
         estimatedVolume: estimatedVolume?.trim() || 'Regular Supply',
@@ -170,7 +170,7 @@ export async function POST(request) {
     return NextResponse.json({
       success: true,
       referenceId: newEnquiry.id,
-      message: 'Your wholesale enquiry has been registered successfully with our Hyderabad dispatch desk.',
+      message: 'Your wholesale enquiry has been registered successfully with our Adilabad dispatch desk.',
     });
   } catch (error) {
     console.error('API /api/enquiries POST error:', error);

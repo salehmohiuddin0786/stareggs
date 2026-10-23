@@ -13,7 +13,7 @@ export default function AdminSettingsPage() {
     CONTACT_EMAIL: 'enquiry@stareggs.in',
     HEAD_OFFICE_ADDRESS: 'Commercial Complex, Market Road, Near Old Bus Stand, Adilabad, Telangana 504001',
     BUSINESS_HOURS: 'Monday - Saturday: 5:00 AM – 8:00 PM IST | Sunday: 5:00 AM – 1:00 PM IST',
-    ANNOUNCEMENT_BANNER: 'Serving Hyderabad Daily & Expanding Telangana-Wide • Direct Farm-to-Business Logistics',
+    ANNOUNCEMENT_BANNER: 'Serving Adilabad Daily & Expanding Across All 33 Districts of Telangana • Direct Farm Procurement',
   });
 
   const [loading, setLoading] = useState(true);

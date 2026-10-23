@@ -39,7 +39,7 @@ const reasons = [
     icon: Award,
     title: 'Dedicated Account Support',
     description:
-      'Direct access to our Hyderabad dispatch desk and WhatsApp coordination desk for standing orders, emergency loads, and route adjustments.',
+      'Direct access to our Adilabad dispatch desk and WhatsApp coordination desk for standing orders, emergency loads, and route adjustments.',
   },
 ];
 

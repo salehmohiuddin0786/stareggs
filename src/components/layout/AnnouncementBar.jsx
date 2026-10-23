@@ -10,7 +10,7 @@ export default function AnnouncementBar() {
             <Truck className="w-3 h-3" />
           </span>
           <span className="font-medium text-white truncate">
-            Serving Hyderabad Daily & Expanding Across All 33 Districts of Telangana
+            Serving Adilabad Daily & Expanding Across All 33 Districts of Telangana
           </span>
           <span className="hidden md:inline-block text-slate-500">•</span>
           <span className="hidden md:inline-block text-slate-400">

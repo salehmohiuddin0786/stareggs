@@ -33,7 +33,7 @@ export default function ContactCta() {
             </h2>
 
             <p className="text-brand-muted text-base sm:text-lg leading-relaxed">
-              Connect directly with our Hyderabad commercial operations desk. Request customized volume quotation tiers or discuss regional distribution partnership terms across Telangana.
+              Connect directly with our Adilabad commercial operations desk. Request customized volume quotation tiers or discuss regional distribution partnership terms across Telangana.
             </p>
 
             <div className="pt-2 flex flex-wrap items-center gap-4">
@@ -70,7 +70,7 @@ export default function ContactCta() {
               </span>
               <span>•</span>
               <span className="text-slate-400">
-                Daily Morning Deliveries Across Greater Hyderabad & Expanding Telangana Corridors
+                Daily Morning Deliveries Across Adilabad & Expanding Telangana Corridors
               </span>
             </div>
           </div>

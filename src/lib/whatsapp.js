@@ -19,7 +19,7 @@ export function getWhatsAppLink({
       break;
 
     case 'RETAIL':
-      text = `Hello Star Eggs Team,\n\nI run a retail shop/supermarket and would like to enquire about regular egg supply.\n\n• Business Name: ${businessName || 'Retail Shop'}\n• District / Area: ${district || 'Hyderabad'}\n• Required Frequency: Daily / Regular\n\nPlease let me know your delivery routes and minimum order terms.`;
+      text = `Hello Star Eggs Team,\n\nI run a retail shop/supermarket and would like to enquire about regular egg supply.\n\n• Business Name: ${businessName || 'Retail Shop'}\n• District / Area: ${district || 'Adilabad / Telangana'}\n• Required Frequency: Daily / Regular\n\nPlease let me know your delivery routes and minimum order terms.`;
       break;
 
     case 'DISTRIBUTION':
@@ -27,7 +27,7 @@ export function getWhatsAppLink({
       break;
 
     case 'PRODUCT':
-      text = `Hello Star Eggs Team,\n\nI am interested in ordering: ${product || 'Star Eggs Products'}.\n\n• District: ${district || 'Hyderabad'}\n\nPlease share availability and wholesale pricing details.`;
+      text = `Hello Star Eggs Team,\n\nI am interested in ordering: ${product || 'Star Eggs Products'}.\n\n• District: ${district || 'Adilabad / Telangana'}\n\nPlease share availability and wholesale pricing details.`;
       break;
 
     case 'GENERAL':

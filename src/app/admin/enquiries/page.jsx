@@ -258,7 +258,7 @@ export default function AdminEnquiriesPage() {
                         </td>
 
                         <td className="p-4">
-                          <div className="text-white font-medium">{enq.district || 'Hyderabad'}</div>
+                          <div className="text-white font-medium">{enq.district || 'Adilabad'}</div>
                           <div className="text-[10px] text-slate-400 truncate max-w-[130px]">
                             {enq.locality || 'N/A'}
                           </div>

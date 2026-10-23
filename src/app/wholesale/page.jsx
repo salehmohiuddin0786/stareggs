@@ -18,7 +18,7 @@ function WholesaleFormContent() {
     whatsapp: '',
     email: '',
     businessType: 'Wholesaler / Bulk Trader',
-    district: 'Hyderabad',
+    district: 'Adilabad',
     locality: '',
     productName: 'Standard White Eggs (30-Egg Tray)',
     estimatedVolume: '',
@@ -119,7 +119,7 @@ function WholesaleFormContent() {
           </h1>
 
           <p className="text-brand-muted text-base leading-relaxed">
-            Fill in your commercial requirements below. No account required. Our Hyderabad operations desk confirms daily benchmark wholesale rates, delivery slots, and packaging specs within business hours.
+            Fill in your commercial requirements below. No account required. Our Adilabad operations desk confirms daily benchmark wholesale rates, delivery slots, and packaging specs within business hours.
           </p>
         </div>
 
@@ -149,7 +149,7 @@ function WholesaleFormContent() {
                 <span>Next Commercial Steps:</span>
               </div>
               <ul className="list-disc pl-5 space-y-1 text-slate-400">
-                <li>Our Hyderabad operations coordinator will verify daily wholesale rates for your required volume.</li>
+                <li>Our Adilabad operations coordinator will verify daily wholesale rates for your required volume.</li>
                 <li>You will receive a call or WhatsApp message on {formData.phone} with current spot pricing.</li>
                 <li>Delivery route and morning dispatch schedule will be allocated upon confirmation.</li>
               </ul>

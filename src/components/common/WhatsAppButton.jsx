@@ -29,7 +29,7 @@ export default function WhatsAppButton() {
           </div>
 
           <p className="text-xs text-brand-muted mb-3 leading-relaxed">
-            Need immediate wholesale pricing or dispatch availability? Chat directly with our Hyderabad dispatch desk.
+            Need immediate wholesale pricing or dispatch availability? Chat directly with our Adilabad dispatch desk.
           </p>
 
           <div className="space-y-2">

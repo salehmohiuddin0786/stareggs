@@ -31,7 +31,7 @@ function SuccessContent() {
         </div>
 
         <p className="text-xs text-slate-400 max-w-lg mx-auto">
-          Our Hyderabad dispatch coordinator will review your requirement and reach out on your provided contact number during business hours.
+          Our Adilabad dispatch coordinator will review your requirement and reach out on your provided contact number during business hours.
         </p>
 
         <div className="pt-6 flex flex-wrap items-center justify-center gap-4">

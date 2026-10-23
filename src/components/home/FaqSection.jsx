@@ -7,11 +7,11 @@ import ScrollReveal from '@/components/motion/ScrollReveal';
 const faqs = [
   {
     q: 'What is the minimum order quantity (MOQ) for commercial delivery?',
-    a: 'For retail shops within active Hyderabad daily fleet routes, standard MOQ is 10 trays (300 eggs). For wholesale bulk master boxes (210 eggs/box), MOQ is typically 5 master cartons (1,050 eggs). Custom arrangements can be structured for high-volume standing contracts.',
+    a: 'For retail shops within active Adilabad and regional daily fleet routes, standard MOQ is 10 trays (300 eggs). For wholesale bulk master boxes (210 eggs/box), MOQ is typically 5 master cartons (1,050 eggs). Custom arrangements can be structured for high-volume standing contracts.',
   },
   {
     q: 'Which districts in Telangana are currently eligible for direct delivery?',
-    a: 'We currently run daily active routes across Greater Hyderabad, Rangareddy, Medchal-Malkajgiri, and Sangareddy. We are actively expanding regional hub distribution into Warangal, Karimnagar, Nizamabad, Khammam, Mahbubnagar, and Nalgonda. Buyers in all other Telangana districts can request custom bulk dispatches.',
+    a: 'Headquartered in Adilabad, we run active daily delivery fleets across Adilabad, northern Telangana hubs, and partner routes. We are actively expanding regional distribution networks into Nizamabad, Karimnagar, Warangal, Khammam, and across all 33 districts of Telangana. Commercial buyers anywhere in Telangana can request custom bulk dispatches.',
   },
   {
     q: 'How is daily wholesale egg pricing determined?',

@@ -88,7 +88,7 @@ export default function TelanganaMap() {
             </h2>
 
             <p className="text-brand-muted text-base leading-relaxed">
-              Star Eggs operates dedicated morning replenishment fleets across Greater Hyderabad while systematically onboarding regional distribution hubs across all 33 districts of Telangana.
+              Headquartered in Adilabad with dedicated fleet dispatch operations, Star Eggs supplies retail counters and wholesale partners while expanding regional distribution hubs across all 33 districts of Telangana.
             </p>
           </div>
         </ScrollReveal>

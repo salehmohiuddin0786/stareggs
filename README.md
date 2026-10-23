@@ -2,7 +2,7 @@
 
 ![Star Eggs Hero Banner](/public/images/products/egg-tray.svg)
 
-STAR EGGS is a high-performance, award-grade full-stack commercial web platform for an egg wholesale, retail, and regional logistics network headquartered in Hyderabad and expanding across all 33 districts of Telangana, India.
+STAR EGGS is a high-performance, award-grade full-stack commercial web platform for an egg wholesale, retail, and regional logistics network headquartered in Adilabad and expanding across all 33 districts of Telangana, India.
 
 ---
 

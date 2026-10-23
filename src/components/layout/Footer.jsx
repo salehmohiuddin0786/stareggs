@@ -17,7 +17,7 @@ export default function Footer() {
           <div className="lg:col-span-2 space-y-4">
             <Logo subtitle={false} />
             <p className="text-brand-muted text-sm leading-relaxed max-w-sm mt-3">
-              STAR EGGS is a premier egg wholesale, retail supply, and distribution brand serving Hyderabad and expanding across all districts of Telangana. Direct farm sourcing, strict candling standards, and reliable daily logistics.
+              STAR EGGS is a premier egg wholesale, retail supply, and distribution brand headquartered in Adilabad and expanding across all 33 districts of Telangana. Direct farm sourcing, strict candling standards, and reliable daily logistics.
             </p>
 
             <div className="pt-2 flex flex-wrap gap-3">
@@ -74,22 +74,22 @@ export default function Footer() {
             <ul className="space-y-2.5 text-sm text-brand-muted">
               <li>
                 <Link href="/#telangana-coverage" className="hover:text-white transition">
-                  Hyderabad Hub (Daily Active)
+                  Adilabad HQ (Daily Active Hub)
                 </Link>
               </li>
               <li>
                 <Link href="/#telangana-coverage" className="hover:text-white transition">
-                  Rangareddy & Medchal
+                  Nizamabad & Nirmal
                 </Link>
               </li>
               <li>
                 <Link href="/#telangana-coverage" className="hover:text-white transition">
-                  Warangal & Hanamkonda
+                  Warangal & Karimnagar
                 </Link>
               </li>
               <li>
                 <Link href="/#telangana-coverage" className="hover:text-white transition">
-                  Karimnagar & Nizamabad
+                  Mancherial & Asifabad
                 </Link>
               </li>
               <li>

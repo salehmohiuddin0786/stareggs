@@ -186,7 +186,7 @@ export default async function AdminDashboardPage() {
                         </span>
                       </td>
                       <td className="py-3.5">
-                        <div className="text-white font-medium">{enq.district || 'Hyderabad'}</div>
+                        <div className="text-white font-medium">{enq.district || 'Adilabad'}</div>
                         <div className="text-[10px] text-slate-500 truncate max-w-[120px]">
                           {enq.locality || 'N/A'}
                         </div>

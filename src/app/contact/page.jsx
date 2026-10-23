@@ -35,7 +35,7 @@ export default function ContactPage() {
     contactPerson: '',
     phone: '',
     email: '',
-    district: 'Hyderabad',
+    district: 'Adilabad',
     additionalNotes: '',
     website_fax_honey: '',
   });
@@ -109,7 +109,7 @@ export default function ContactPage() {
           </h1>
 
           <p className="text-brand-muted text-base sm:text-lg leading-relaxed">
-            Have a wholesale requirement, retail route enquiry, or regional distribution question? Get in touch with our Hyderabad operations team.
+            Have a wholesale requirement, retail route enquiry, or regional distribution question? Get in touch with our Adilabad operations team.
           </p>
         </div>
 
@@ -264,7 +264,7 @@ export default function ContactPage() {
                   <Button
                     onClick={() => {
                       setSuccess(false);
-                      setFormData({ businessName: '', contactPerson: '', phone: '', email: '', district: 'Hyderabad', additionalNotes: '', website_fax_honey: '' });
+                      setFormData({ businessName: '', contactPerson: '', phone: '', email: '', district: 'Adilabad', additionalNotes: '', website_fax_honey: '' });
                     }}
                     variant="outline"
                     size="sm"
