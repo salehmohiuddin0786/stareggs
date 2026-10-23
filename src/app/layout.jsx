@@ -8,6 +8,7 @@ import ScrollProgress from '@/components/motion/ScrollProgress';
 import MotionProvider from '@/components/motion/MotionProvider';
 import SmoothScrollProvider from '@/components/motion/SmoothScrollProvider';
 import CursorTour from '@/components/motion/CursorTour';
+import AppFloatingNav from '@/components/layout/AppFloatingNav';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -113,6 +114,7 @@ export default function RootLayout({ children }) {
             <Footer />
             <WhatsAppButton />
             <CursorTour />
+            <AppFloatingNav />
           </SmoothScrollProvider>
         </MotionProvider>
       </body>
