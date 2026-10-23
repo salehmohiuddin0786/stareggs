@@ -8,7 +8,7 @@ import ScrollReveal from '@/components/motion/ScrollReveal';
 
 export default function ContactCta() {
   return (
-    <section className="py-20 bg-brand-navy relative overflow-hidden border-t border-slate-800">
+    <section id="contact-cta" className="py-20 bg-brand-navy relative overflow-hidden border-t border-slate-800">
       {/* Dynamic Background Highlights */}
       <div className="absolute inset-0 bg-radial-spotlight opacity-50 pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-brand-red/10 rounded-full blur-[140px] pointer-events-none" />

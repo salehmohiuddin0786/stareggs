@@ -438,7 +438,7 @@ export default function DispatchTimetable() {
         {/* ========================================================
             PART 2: COMMERCIAL PRODUCT LINEUP (FESTIVAL ROSTER STYLE)
             ======================================================== */}
-        <div ref={lineupRef} className="pt-8 border-t border-slate-800">
+        <div ref={lineupRef} id="dispatch-lineup" className="pt-8 border-t border-slate-800">
           <div className="max-w-3xl mb-12 space-y-4">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-navy border border-brand-red/40 text-xs font-bold uppercase tracking-widest text-brand-red">
               <Package className="w-3.5 h-3.5" />

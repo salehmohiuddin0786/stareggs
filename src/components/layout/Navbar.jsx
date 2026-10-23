@@ -75,6 +75,19 @@ export default function Navbar() {
 
           {/* Action CTAs */}
           <div className="hidden lg:flex items-center gap-3">
+            <button
+              onClick={() => {
+                if (typeof window !== 'undefined') {
+                  window.dispatchEvent(new CustomEvent('start-brand-tour'));
+                }
+              }}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-brand-navy-light/90 border border-brand-blue/40 hover:border-brand-red text-xs font-bold uppercase tracking-wider text-slate-300 hover:text-white transition shadow-sm"
+              title="Launch Guided Commercial Tour"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-red animate-pulse" />
+              <span>Take Tour</span>
+            </button>
+
             <a
               href={`tel:${process.env.NEXT_PUBLIC_PHONE_NUMBER || '+919876543210'}`}
               className="p-2.5 rounded-xl text-brand-muted hover:text-white hover:bg-white/5 border border-slate-800 transition"
@@ -136,6 +149,19 @@ export default function Navbar() {
             })}
 
             <div className="pt-4 mt-2 border-t border-slate-800 space-y-2.5">
+              <button
+                onClick={() => {
+                  setIsOpen(false);
+                  if (typeof window !== 'undefined') {
+                    window.dispatchEvent(new CustomEvent('start-brand-tour'));
+                  }
+                }}
+                className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-brand-navy border border-brand-blue/50 text-white font-bold text-xs uppercase tracking-wider"
+              >
+                <span className="w-2 h-2 rounded-full bg-brand-red animate-pulse" />
+                <span>Start Guided Brand Tour</span>
+              </button>
+
               <Button
                 href="/wholesale"
                 variant="primary"

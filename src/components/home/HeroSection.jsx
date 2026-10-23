@@ -3,16 +3,62 @@
 import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import { motion } from 'motion/react';
-import { ArrowUpRight, ShieldCheck, Truck, Sparkles, Building2, Store } from 'lucide-react';
+import {
+  ArrowUpRight,
+  ShieldCheck,
+  Truck,
+  Sparkles,
+  MapPin,
+  Clock,
+  Compass,
+} from 'lucide-react';
 import Button from '@/components/common/Button';
 import HeroFallback from '@/components/3d/HeroFallback';
-import AnimatedCounter from '@/components/motion/AnimatedCounter';
+import CountUp from '@/components/motion/CountUp';
+import WordRotator from '@/components/motion/WordRotator';
 
 // Dynamically load 3D Canvas on client only
 const Hero3DCanvas = dynamic(() => import('@/components/3d/Hero3DCanvas'), {
   ssr: false,
   loading: () => <HeroFallback />,
 });
+
+// Staggered reveal animation variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const maskItemVariants = {
+  hidden: { y: '110%', opacity: 0 },
+  visible: {
+    y: '0%',
+    opacity: 1,
+    transition: {
+      duration: 0.85,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+};
+
+const fadeUpVariants = {
+  hidden: { opacity: 0, y: 25, filter: 'blur(8px)' },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: 'blur(0px)',
+    transition: {
+      duration: 0.75,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+};
 
 export default function HeroSection() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -41,11 +87,29 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-[92vh] flex items-center bg-brand-navy overflow-hidden">
-      {/* Studio Lighting Background Gradients */}
-      <div className="absolute inset-0 bg-radial-spotlight opacity-70 pointer-events-none" />
-      <div className="absolute top-1/4 -right-20 w-[500px] h-[500px] bg-brand-blue/15 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-[400px] h-[400px] bg-brand-red/10 rounded-full blur-[140px] pointer-events-none" />
+    <section
+      id="hero-section"
+      className="relative min-h-[94vh] flex items-center bg-brand-navy overflow-hidden"
+    >
+      {/* Studio Lighting Background Gradients with entrance bloom */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.85 }}
+        animate={{ opacity: 0.75, scale: 1 }}
+        transition={{ duration: 1.4, ease: 'easeOut' }}
+        className="absolute inset-0 bg-radial-spotlight pointer-events-none"
+      />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.2 }}
+        transition={{ duration: 2, delay: 0.3 }}
+        className="absolute top-1/4 -right-24 w-[560px] h-[560px] bg-brand-blue rounded-full blur-[140px] pointer-events-none"
+      />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.12 }}
+        transition={{ duration: 2, delay: 0.5 }}
+        className="absolute bottom-10 left-10 w-[420px] h-[420px] bg-brand-red rounded-full blur-[150px] pointer-events-none"
+      />
 
       {/* Grid Floor Lines for Cinematic Perspective */}
       <div
@@ -61,42 +125,86 @@ export default function HeroSection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          {/* Left Column: Headlines & CTAs */}
+          {/* Left Column: Headlines, Word Rotator & CTAs */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
             className="lg:col-span-7 space-y-6"
           >
-            {/* Brand Statement Pill */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-brand-navy-light/90 border border-brand-blue/40 shadow-glow-blue/50 text-xs font-bold tracking-widest uppercase text-white backdrop-blur-md">
-              <span className="w-2 h-2 rounded-full bg-brand-red animate-pulse" />
-              <span>WHOLESALE • RETAIL • DISTRIBUTION</span>
-            </div>
+            {/* 1. Brand Statement Pill (Hero Reveal Item) */}
+            <motion.div variants={fadeUpVariants}>
+              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-brand-navy-light/90 border border-brand-blue/40 shadow-glow-blue/50 text-xs font-bold tracking-widest uppercase text-white backdrop-blur-md">
+                <span className="w-2 h-2 rounded-full bg-brand-red animate-pulse" />
+                <span>WHOLESALE • RETAIL • DISTRIBUTION HUB</span>
+                <span className="text-slate-400 font-normal">| Adilabad HQ</span>
+              </div>
+            </motion.div>
 
-            {/* Main Editorial Headline */}
+            {/* 2. Main Editorial Headline with Mask Clip-Path Reveal */}
             <div className="space-y-1">
               <h1 className="font-display text-4xl sm:text-6xl xl:text-7xl font-black tracking-tight text-white uppercase leading-[1.05]">
-                FRESH EGGS.
-                <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue via-blue-400 to-white">
-                  RELIABLE SUPPLY.
+                {/* Line 1 */}
+                <span className="block overflow-hidden pb-1">
+                  <motion.span variants={maskItemVariants} className="block">
+                    FRESH EGGS.
+                  </motion.span>
                 </span>
-                <br />
-                <span className="relative inline-block">
-                  TELANGANA-WIDE.
-                  <span className="absolute -bottom-1.5 left-0 w-24 h-1.5 bg-brand-red rounded-full" />
+
+                {/* Line 2 */}
+                <span className="block overflow-hidden pb-1">
+                  <motion.span
+                    variants={maskItemVariants}
+                    className="block text-transparent bg-clip-text bg-gradient-to-r from-brand-blue via-blue-300 to-white"
+                  >
+                    RELIABLE SUPPLY.
+                  </motion.span>
+                </span>
+
+                {/* Line 3 */}
+                <span className="block overflow-hidden pb-1">
+                  <motion.span variants={maskItemVariants} className="relative inline-block">
+                    TELANGANA-WIDE.
+                    <motion.span
+                      initial={{ scaleX: 0 }}
+                      animate={{ scaleX: 1 }}
+                      transition={{ delay: 0.9, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                      style={{ originX: 0 }}
+                      className="absolute -bottom-1.5 left-0 w-28 h-1.5 bg-brand-red rounded-full"
+                    />
+                  </motion.span>
                 </span>
               </h1>
             </div>
 
-            {/* Supporting Copy */}
-            <p className="text-brand-muted text-base sm:text-lg max-w-xl leading-relaxed pt-2">
-              Your trusted partner for quality egg supply — from individual neighborhood retailers to high-volume wholesale distribution networks based in Adilabad and serving across Telangana.
-            </p>
+            {/* 3. Kinetic Word Rotator */}
+            <motion.div variants={fadeUpVariants} className="pt-1">
+              <WordRotator
+                prefix="RELIABLE BULK SUPPLY FOR:"
+                words={[
+                  'WHOLESALE DISTRIBUTORS',
+                  'SUPERMARKET CHAINS',
+                  'HOTELS & RESTAURANTS',
+                  'COMMERCIAL BAKERIES',
+                  'DISTRICT AGGREGATORS',
+                ]}
+                interval={2800}
+              />
+            </motion.div>
 
-            {/* CTAs */}
-            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            {/* 4. Supporting Editorial Copy */}
+            <motion.p
+              variants={fadeUpVariants}
+              className="text-brand-muted text-base sm:text-lg max-w-xl leading-relaxed"
+            >
+              Your trusted partner for commercial egg supply — from neighborhood retail grocers to high-capacity wholesale distribution networks. Headquartered in Adilabad, delivering fresh daily across all 33 districts of Telangana.
+            </motion.p>
+
+            {/* 5. CTAs with Interactive Tours & Quote */}
+            <motion.div
+              variants={fadeUpVariants}
+              className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4"
+            >
               <Button
                 href="/wholesale"
                 variant="primary"
@@ -113,73 +221,83 @@ export default function HeroSection() {
               >
                 Become a Distribution Partner
               </Button>
-            </div>
+            </motion.div>
 
-            {/* Trust Micro-Metrics with Live Scroll Counters */}
-            <div className="pt-8 border-t border-slate-800/80 grid grid-cols-3 gap-4 max-w-lg">
+            {/* 6. Trust Micro-Metrics with Live CountUp Start Animations */}
+            <motion.div
+              variants={fadeUpVariants}
+              className="pt-8 border-t border-slate-800/80 grid grid-cols-3 gap-4 max-w-lg"
+            >
+              {/* Stat 1: Daily Capacity */}
               <div className="space-y-1">
                 <div className="flex items-center gap-1.5 text-brand-blue">
                   <Truck className="w-4 h-4" />
-                  <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Dispatch</span>
+                  <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Capacity</span>
                 </div>
-                <div className="text-base font-bold text-white flex items-center">
-                  <span>Daily 5 AM</span>
+                <div className="text-lg sm:text-xl font-bold text-white font-display">
+                  <CountUp end={100000} duration={2.2} suffix="+" />
                 </div>
-                <div className="text-[11px] text-slate-500">Morning Fleet</div>
+                <div className="text-[11px] text-slate-500">Daily Eggs Procured</div>
               </div>
 
+              {/* Stat 2: Zero Shock / Quality */}
               <div className="space-y-1">
                 <div className="flex items-center gap-1.5 text-emerald-400">
                   <ShieldCheck className="w-4 h-4" />
                   <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Quality</span>
                 </div>
-                <div className="text-base font-bold text-white flex items-center gap-1">
-                  <AnimatedCounter value={0} suffix="%" />
-                  <span>Transit Shock</span>
+                <div className="text-lg sm:text-xl font-bold text-white font-display">
+                  <CountUp end={99.8} decimals={1} duration={2.0} suffix="%" />
                 </div>
-                <div className="text-[11px] text-slate-500">Pulp Cradling</div>
+                <div className="text-[11px] text-slate-500">Zero Crack Rate</div>
               </div>
 
+              {/* Stat 3: Telangana Coverage */}
               <div className="space-y-1">
                 <div className="flex items-center gap-1.5 text-brand-red">
                   <Sparkles className="w-4 h-4" />
                   <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Network</span>
                 </div>
-                <div className="text-base font-bold text-white flex items-center gap-1">
-                  <AnimatedCounter value={33} suffix=" Districts" />
+                <div className="text-lg sm:text-xl font-bold text-white font-display">
+                  <CountUp end={33} duration={1.6} suffix=" Districts" />
                 </div>
-                <div className="text-[11px] text-slate-500">Telangana Reach</div>
+                <div className="text-[11px] text-slate-500">Telangana Coverage</div>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
 
-          {/* Right Column: 3D Egg Experience */}
+          {/* Right Column: 3D Egg Experience Reveal */}
           <div className="lg:col-span-5 relative h-[420px] sm:h-[480px] lg:h-[580px] flex items-center justify-center">
             {/* Subtle Studio Glow Backdrop */}
             <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-transparent to-transparent z-10 pointer-events-none" />
 
-            {/* 3D Scene or Mobile Fallback */}
-            <div className="w-full h-full relative z-0">
+            {/* 3D Scene or Mobile Fallback with entrance fade-in */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.92 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.4, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              className="w-full h-full relative z-0"
+            >
               {isMobile ? (
                 <HeroFallback />
               ) : (
                 <Hero3DCanvas mousePos={mousePos} />
               )}
-            </div>
+            </motion.div>
 
             {/* Floating Quality Callout Badge */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
-              className="absolute bottom-4 right-4 z-20 bg-brand-navy-dark/90 border border-brand-blue/30 rounded-2xl p-3.5 backdrop-blur-xl shadow-2xl hidden sm:flex items-center gap-3"
+              initial={{ opacity: 0, scale: 0.85, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ delay: 0.9, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              className="absolute bottom-4 right-4 z-20 bg-brand-navy-dark/95 border border-brand-blue/30 rounded-2xl p-3.5 backdrop-blur-xl shadow-2xl hidden sm:flex items-center gap-3"
             >
               <div className="w-10 h-10 rounded-xl bg-brand-blue/20 border border-brand-blue/40 flex items-center justify-center text-brand-blue font-bold">
                 ★
               </div>
               <div>
                 <div className="text-xs font-black uppercase tracking-wider text-white">
-                  Farm-Direct Grading
+                  Farm-Direct Optical Candling
                 </div>
                 <div className="text-[11px] text-brand-muted">
                   Calibrated for wholesale & culinary standards

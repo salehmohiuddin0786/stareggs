@@ -1,8 +1,9 @@
 'use client';
 
-import { CheckCircle2, Shield, Eye, PackageCheck, AlertCircle } from 'lucide-react';
+import { CheckCircle2, Shield, Eye, PackageCheck, AlertCircle, Award, Truck, CheckCheck, Users } from 'lucide-react';
 import ScrollReveal from '@/components/motion/ScrollReveal';
 import TiltCard from '@/components/motion/TiltCard';
+import CountUp from '@/components/motion/CountUp';
 
 const standards = [
   {
@@ -87,6 +88,43 @@ export default function TrustSection() {
             })}
           </div>
         </div>
+
+        {/* Live CountUp Commercial Metrics Strip */}
+        <ScrollReveal direction="up" delay={0.25} className="mt-16">
+          <div className="p-8 rounded-3xl bg-brand-navy-dark border border-slate-800 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div className="space-y-1">
+              <div className="text-2xl sm:text-4xl font-black font-display text-white">
+                <CountUp end={100000} duration={2.2} suffix="+" />
+              </div>
+              <div className="text-xs font-bold uppercase tracking-wider text-brand-blue">Daily Capacity</div>
+              <div className="text-[11px] text-slate-500">Eggs Handled & Dispatched</div>
+            </div>
+
+            <div className="space-y-1">
+              <div className="text-2xl sm:text-4xl font-black font-display text-emerald-400">
+                <CountUp end={99.8} decimals={1} duration={2.0} suffix="%" />
+              </div>
+              <div className="text-xs font-bold uppercase tracking-wider text-emerald-400">Intact Arrival</div>
+              <div className="text-[11px] text-slate-500">Zero Transit Shock Record</div>
+            </div>
+
+            <div className="space-y-1">
+              <div className="text-2xl sm:text-4xl font-black font-display text-white">
+                <CountUp end={500} duration={1.8} suffix="+" />
+              </div>
+              <div className="text-xs font-bold uppercase tracking-wider text-brand-red">Active Clients</div>
+              <div className="text-[11px] text-slate-500">Retailers, HORECA & Bakeries</div>
+            </div>
+
+            <div className="space-y-1">
+              <div className="text-2xl sm:text-4xl font-black font-display text-white">
+                <CountUp end={33} duration={1.5} suffix=" Districts" />
+              </div>
+              <div className="text-xs font-bold uppercase tracking-wider text-slate-300">Coverage Network</div>
+              <div className="text-[11px] text-slate-500">Serving Across Telangana</div>
+            </div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
