@@ -1,7 +1,7 @@
 import { Space_Grotesk, Inter } from 'next/font/google';
 import './globals.css';
 import AnnouncementBar from '../components/layout/AnnouncementBar';
-import Navbar from '../components/layout/Navbar';
+import TopBrandHeader from '../components/layout/TopBrandHeader';
 import Footer from '@/components/layout/Footer';
 import WhatsAppButton from '@/components/common/WhatsAppButton';
 import ScrollProgress from '@/components/motion/ScrollProgress';
@@ -109,7 +109,7 @@ export default function RootLayout({ children }) {
           <SmoothScrollProvider>
             <ScrollProgress />
             <AnnouncementBar />
-            <Navbar />
+            <TopBrandHeader />
             <main className="flex-1">{children}</main>
             <Footer />
             <WhatsAppButton />
