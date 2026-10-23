@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef, useState } from 'react';
-import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } from 'motion/react';
 
 export default function TiltCard({
   children,

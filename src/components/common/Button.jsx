@@ -2,7 +2,7 @@
 
 import { useRef, useState } from 'react';
 import Link from 'next/link';
-import { motion, useSpring } from 'framer-motion';
+import { motion, useSpring } from 'motion/react';
 import {
   ArrowUpRight,
   ArrowLeft,
@@ -68,7 +68,7 @@ export default function Button({
   };
 
   const baseClasses =
-    'relative group inline-flex items-center justify-center font-display font-bold tracking-wide rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-brand-navy active:scale-[0.97] disabled:opacity-50 disabled:pointer-events-none select-none overflow-hidden';
+    'relative group inline-flex items-center justify-center font-display font-bold tracking-wide rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-brand-navy active:scale-[0.97] cursor-pointer disabled:opacity-50 disabled:pointer-events-none select-none overflow-hidden';
 
   const sizeClasses = {
     sm: 'text-xs px-4 py-2 gap-1.5',

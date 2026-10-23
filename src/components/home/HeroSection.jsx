@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { ArrowUpRight, ShieldCheck, Truck, Sparkles, Building2, Store } from 'lucide-react';
 import Button from '@/components/common/Button';
 import HeroFallback from '@/components/3d/HeroFallback';

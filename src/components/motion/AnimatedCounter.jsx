@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState, useRef } from 'react';
-import { useInView, useReducedMotion } from 'framer-motion';
+import { useInView, useReducedMotion } from 'motion/react';
 
 export default function AnimatedCounter({ value, suffix = '', prefix = '', duration = 1.6 }) {
   const ref = useRef(null);

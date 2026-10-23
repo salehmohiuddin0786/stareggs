@@ -5,6 +5,7 @@ import Navbar from '../components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import WhatsAppButton from '@/components/common/WhatsAppButton';
 import ScrollProgress from '@/components/motion/ScrollProgress';
+import MotionProvider from '@/components/motion/MotionProvider';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -101,12 +102,14 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="font-sans bg-brand-navy text-white min-h-screen flex flex-col antialiased">
-        <ScrollProgress />
-        <AnnouncementBar />
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <WhatsAppButton />
+        <MotionProvider>
+          <ScrollProgress />
+          <AnnouncementBar />
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <WhatsAppButton />
+        </MotionProvider>
       </body>
     </html>
   );
