@@ -1,0 +1,118 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model AdminUser {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  passwordHash String
+  name         String
+  role         String   @default("ADMIN") // ADMIN, SUPERADMIN
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Category {
+  id          String    @id @default(uuid())
+  name        String
+  slug        String    @unique
+  description String?
+  sortOrder   Int       @default(0)
+  isActive    Boolean   @default(true)
+  products    Product[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Product {
+  id                 String    @id @default(uuid())
+  name               String
+  slug               String    @unique
+  categoryId         String
+  category           Category  @relation(fields: [categoryId], references: [id])
+  description        String
+  unitType           String    @default("Tray (30 Eggs)") // e.g. "Tray (30 Eggs)", "Carton (210 Eggs)", "Crate", "Wholesale Bulk"
+  minOrderQty        String    @default("10 Trays")
+  availabilityStatus String    @default("IN_STOCK") // IN_STOCK, ORDER_ONLY, HIGH_DEMAND
+  imageUrl           String?
+  isFeatured         Boolean   @default(false)
+  sortOrder          Int       @default(0)
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+}
+
+model Enquiry {
+  id                  String            @id @default(uuid())
+  type                String            @default("WHOLESALE") // WHOLESALE, RETAIL, QUICK_CONTACT
+  businessName        String
+  contactPerson       String
+  phone               String
+  whatsapp            String?
+  email               String?
+  businessType        String?           // Wholesaler, Retailer, Supermarket, Hotel or Restaurant, Bakery, Caterer, Institutional Buyer, Other
+  district            String?           // Telangana District Name
+  locality            String?
+  productId           String?
+  productName         String?
+  estimatedVolume     String?           // Daily / Weekly volume
+  packagingPreference String?           // Trays, Cartons, Custom
+  deliveryFrequency   String?           // Daily, Alternate Days, Weekly, On-Demand
+  expectedStartDate   String?
+  additionalNotes     String?
+  status              String            @default("NEW") // NEW, CONTACTED, QUOTATION_SENT, IN_DISCUSSION, APPROVED, REJECTED, COMPLETED
+  internalNotes       String?
+  activities          EnquiryActivity[]
+  createdAt           DateTime          @default(now())
+  updatedAt           DateTime          @updatedAt
+}
+
+model DistributionApplication {
+  id                     String   @id @default(uuid())
+  businessName           String
+  applicantName          String
+  phone                  String
+  whatsapp               String?
+  email                  String?
+  preferredDistricts     String   // Comma separated or district list
+  coldStorageCapacity    String?  // Storage / warehousing capacity
+  deliveryFleet          String?  // Delivery vehicles / transport
+  currentExperience      String?  // Existing distribution network / years
+  monthlyDemandEstimated String?  // Expected monthly egg volume
+  status                 String   @default("NEW") // NEW, CONTACTED, IN_REVIEW, APPROVED, REJECTED
+  internalNotes          String?
+  createdAt              DateTime @default(now())
+  updatedAt              DateTime @updatedAt
+}
+
+model DistrictCoverage {
+  id           String   @id @default(uuid())
+  districtName String   @unique
+  status       String   @default("PLANNED_EXPANSION") // CURRENTLY_SERVED, PLANNED_EXPANSION, ENQUIRE_AVAILABILITY
+  coverageHub  String?  // e.g. "Direct Daily Fleet", "Hub Dispatch", etc.
+  leadCount    Int      @default(0)
+  sortOrder    Int      @default(0)
+  updatedAt    DateTime @updatedAt
+}
+
+model Setting {
+  id          String   @id @default(uuid())
+  key         String   @unique
+  value       String
+  description String?
+  updatedAt   DateTime @updatedAt
+}
+
+model EnquiryActivity {
+  id        String   @id @default(uuid())
+  enquiryId String
+  enquiry   Enquiry  @relation(fields: [enquiryId], references: [id], onDelete: Cascade)
+  actor     String   @default("System")
+  action    String   // Status Change, Note Added, Quotation Sent
+  note      String?
+  createdAt DateTime @default(now())
+}

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <radialGradient id="trayGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#174BFF" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#071426" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="eggGradWhite" x1="20%" y1="10%" x2="80%" y2="90%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="70%" stop-color="#E2E8F0"/>
+      <stop offset="100%" stop-color="#CBD5E1"/>
+    </linearGradient>
+    <linearGradient id="trayPulp" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="#071426"/>
+  <circle cx="200" cy="150" r="130" fill="url(#trayGlow)"/>
+  
+  <!-- Tray Base Shadow -->
+  <ellipse cx="200" cy="225" rx="140" ry="25" fill="#040b15" opacity="0.8"/>
+  
+  <!-- Pulp Tray Base -->
+  <polygon points="70,180 330,180 310,220 90,220" fill="url(#trayPulp)" stroke="#475569" stroke-width="1.5"/>
+  
+  <!-- Row 1 Eggs -->
+  <g transform="translate(0, -10)">
+    <ellipse cx="110" cy="180" rx="20" ry="26" fill="url(#eggGradWhite)"/>
+    <ellipse cx="155" cy="180" rx="20" ry="26" fill="url(#eggGradWhite)"/>
+    <ellipse cx="200" cy="180" rx="20" ry="26" fill="url(#eggGradWhite)"/>
+    <ellipse cx="245" cy="180" rx="20" ry="26" fill="url(#eggGradWhite)"/>
+    <ellipse cx="290" cy="180" rx="20" ry="26" fill="url(#eggGradWhite)"/>
+  </g>
+  
+  <!-- Row 2 Eggs -->
+  <g transform="translate(0, -35)">
+    <ellipse cx="120" cy="170" rx="19" ry="25" fill="url(#eggGradWhite)"/>
+    <ellipse cx="160" cy="170" rx="19" ry="25" fill="url(#eggGradWhite)"/>
+    <ellipse cx="200" cy="170" rx="19" ry="25" fill="url(#eggGradWhite)"/>
+    <ellipse cx="240" cy="170" rx="19" ry="25" fill="url(#eggGradWhite)"/>
+    <ellipse cx="280" cy="170" rx="19" ry="25" fill="url(#eggGradWhite)"/>
+  </g>
+  
+  <!-- Row 3 Eggs (Top Layer) -->
+  <g transform="translate(0, -60)">
+    <ellipse cx="140" cy="160" rx="18" ry="24" fill="url(#eggGradWhite)"/>
+    <ellipse cx="180" cy="160" rx="18" ry="24" fill="url(#eggGradWhite)"/>
+    <ellipse cx="220" cy="160" rx="18" ry="24" fill="url(#eggGradWhite)"/>
+    <ellipse cx="260" cy="160" rx="18" ry="24" fill="url(#eggGradWhite)"/>
+  </g>
+
+  <!-- Star Badge Overlay -->
+  <circle cx="340" cy="50" r="24" fill="#FF303B" opacity="0.9"/>
+  <text x="340" y="55" font-family="system-ui, sans-serif" font-size="12" font-weight="900" fill="#FFFFFF" text-anchor="middle">30 TRAY</text>
+  
+  <!-- Text Label -->
+  <text x="200" y="270" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#AAB7CC" text-anchor="middle" letter-spacing="1.5">30-EGG COMMERCIAL PULP TRAY</text>
+</svg>

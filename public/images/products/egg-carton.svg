@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <radialGradient id="boxGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#174BFF" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#071426" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="boxFront" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="boxSide" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="boxTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="#071426"/>
+  <circle cx="200" cy="150" r="130" fill="url(#boxGlow)"/>
+  
+  <!-- Floor Shadow -->
+  <polygon points="100,240 270,260 340,230 170,210" fill="#040b15" opacity="0.8"/>
+  
+  <!-- 3D Master Carton Isometric -->
+  <!-- Top Face -->
+  <polygon points="170,90 270,120 200,160 100,130" fill="url(#boxTop)" stroke="#64748B" stroke-width="1"/>
+  <!-- Front Left Face -->
+  <polygon points="100,130 200,160 200,240 100,210" fill="url(#boxFront)" stroke="#475569" stroke-width="1"/>
+  <!-- Front Right Face -->
+  <polygon points="200,160 270,120 270,200 200,240" fill="url(#boxSide)" stroke="#475569" stroke-width="1"/>
+  
+  <!-- Star Eggs Branding Print on Box -->
+  <g transform="translate(115, 175) rotate(15)">
+    <text font-family="system-ui, sans-serif" font-size="12" font-weight="900" fill="#174BFF" letter-spacing="1">★ STAR EGGS</text>
+    <text y="14" font-family="system-ui, sans-serif" font-size="9" font-weight="600" fill="#FFFFFF">210 EGGS / 7 TRAYS</text>
+  </g>
+  
+  <!-- Heavy Duty Stamp -->
+  <circle cx="340" cy="50" r="24" fill="#FF303B" opacity="0.9"/>
+  <text x="340" y="55" font-family="system-ui, sans-serif" font-size="11" font-weight="900" fill="#FFFFFF" text-anchor="middle">210 BOX</text>
+
+  <!-- Caption -->
+  <text x="200" y="275" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#AAB7CC" text-anchor="middle" letter-spacing="1.5">210-EGG COMMERCIAL MASTER CARTON</text>
+</svg>
