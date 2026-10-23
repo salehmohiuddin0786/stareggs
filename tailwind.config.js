@@ -8,6 +8,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        primary: {
+          DEFAULT: '#E1E0CC',
+          foreground: '#000000',
+        },
         brand: {
           navy: '#071426',
           'navy-dark': '#040b15',
