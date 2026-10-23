@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import { getAdminCookieOptions } from '@/lib/auth';
 
+export const dynamic = 'force-dynamic';
+
 export async function POST() {
   const cookieOpts = getAdminCookieOptions();
   const response = NextResponse.json({ success: true, message: 'Logged out successfully' });

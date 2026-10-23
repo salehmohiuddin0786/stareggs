@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 import { getAdminSession } from '@/lib/auth';
 
+export const dynamic = 'force-dynamic';
+
 function convertDistributorAppsToCSV(data) {
   if (!data || data.length === 0) return '';
   const headers = [
