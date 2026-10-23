@@ -1,6 +1,7 @@
 import HeroSection from '@/components/home/HeroSection';
 import ServicePillars from '@/components/home/ServicePillars';
 import ProductShowcase from '@/components/home/ProductShowcase';
+import DispatchTimetable from '@/components/home/DispatchTimetable';
 import TelanganaMap from '@/components/home/TelanganaMap';
 import WhyChooseUs from '@/components/home/WhyChooseUs';
 import OrderingProcess from '@/components/home/OrderingProcess';
@@ -20,22 +21,25 @@ export default function HomePage() {
       {/* 3. Product Showcase */}
       <ProductShowcase />
 
-      {/* 4. Why Choose Star Eggs */}
+      {/* 4. Daily Fleet Dispatch Timetable & Commercial Supply Lineup (Festival-style with GSAP) */}
+      <DispatchTimetable />
+
+      {/* 5. Why Choose Star Eggs */}
       <WhyChooseUs />
 
-      {/* 5. How Ordering Works */}
+      {/* 6. How Ordering Works */}
       <OrderingProcess />
 
-      {/* 6. Telangana Distribution Coverage (Interactive Map & Directory) */}
+      {/* 7. Telangana Distribution Coverage (Interactive Map & Directory) */}
       <TelanganaMap />
 
-      {/* 7. Business Trust & Quality Standards */}
+      {/* 8. Business Trust & Quality Standards */}
       <TrustSection />
 
-      {/* 8. Frequently Asked Questions */}
+      {/* 9. Frequently Asked Questions */}
       <FaqSection />
 
-      {/* 9. Final Commercial CTA */}
+      {/* 10. Final Commercial CTA */}
       <ContactCta />
     </>
   );
